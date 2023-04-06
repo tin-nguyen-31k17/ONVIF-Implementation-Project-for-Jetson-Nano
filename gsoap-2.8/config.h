@@ -84,7 +84,7 @@
 #define HAVE_NEWLOCALE 1
 
 /* Define to 1 if you have the <openssl/ssl.h> header file. */
-/* #undef HAVE_OPENSSL_SSL_H */
+#define HAVE_OPENSSL_SSL_H 1
 
 /* Define to 1 if you have the `poll' function. */
 #define HAVE_POLL 1
@@ -228,7 +228,7 @@
 /* #undef HAVE_XLOCALE_H */
 
 /* Define to 1 if you have the <zlib.h> header file. */
-/* #undef HAVE_ZLIB_H */
+#define HAVE_ZLIB_H 1
 
 /* Name of package */
 #define PACKAGE "gsoap"
