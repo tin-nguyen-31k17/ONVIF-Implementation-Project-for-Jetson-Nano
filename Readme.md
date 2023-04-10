@@ -7,6 +7,9 @@ This project is an implementation of the ONVIF protocol for Jetson Nano, with th
 - Jetson Nano development kit with JetPack installed
 - ONVIF-compliant cameras connected to the network
 - ONVIF client library (such as ONVIF Device Manager) installed on the Jetson Nano
+- gSOAP 2.8 or greater
+- Python3
+- C++ OpenCV2/4
 
 ## Installation and Usage
 
@@ -16,17 +19,17 @@ This project is an implementation of the ONVIF protocol for Jetson Nano, with th
 4. Run the client application: `./ONVIF-FPT`
 
 # Run
-- ./OnvifPVR configFile.txt
-- ./OnvifPVR IP 192.168.1.1
+- ./ONVIF-FPT configFile.txt
+- ./ONVIF-FPT IP 192.168.1.1
   - Look for the IP of ONVIF cameras on local network.
-- ./OnvifPVR rtsp://@192.168.15.2:554/onvif1 udp
-  - Runs OnvifPVR for just one camera, udp if the the stream is udp.
+- ./ONVIF-FPT rtsp://@192.168.15.2:554/onvif1 udp
+  - Runs ONVIF-FPT for just one camera, udp if the the stream is udp.
 
 The client application will automatically discover any ONVIF-compliant cameras on the network and display their details, including their IP addresses, MAC addresses, and ONVIF profiles. You can then choose to connect to a camera and receive video data from it.
 
 ## Configuration
 
-The client application can be configured using the `config.ini` file, which is located in the project directory. This file contains the following options:
+The client application can be configured using the `config.txt` file, which is located in the project directory. This file contains the following options:
 
 - `log_level`: the log level to use for the application (options are `DEBUG`, `INFO`, `WARN`, `ERROR`, and `FATAL`)
 - `discovery_timeout`: the timeout (in seconds) for ONVIF discovery requests
