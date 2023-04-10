@@ -3,5 +3,6 @@ src/*.o
 src/*~
 include/*~
 *.o
-OnvifPVR
-
+ONVIF-FPT
+OLD/*
+gsoap-2.8/*
