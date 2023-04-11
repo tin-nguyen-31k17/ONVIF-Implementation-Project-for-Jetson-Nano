@@ -34,5 +34,5 @@
     "**/.vscode/**"
   ],
   "C_Cpp_Runner.useAddressSanitizer": false,
-  "cmake.sourceDirectory": "${workspaceFolder}/src"
+  "cmake.sourceDirectory": "${workspaceFolder}/KDSoap-DC"
 }

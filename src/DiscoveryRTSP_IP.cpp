@@ -73,7 +73,7 @@ std::list<char*> DiscoveryRTSP_IP::discovery() {
 	getsockname(socket_desc, (struct sockaddr*)&localAddress, &addressLength);
 	printf("local address3: %s\n", inet_ntoa( localAddress.sin_addr));*/
 
-    for (int i=ipIni ; i<15 ; i++) {
+    for (int i=ipIni ; i<300 ; i++) {
     	sprintf(ip, "%s%d", ipBegin, i);
         r = connectIP(ip);
         
@@ -90,7 +90,7 @@ std::list<char*> DiscoveryRTSP_IP::discovery() {
 			//break;
 	    }
 		else
-			cout << "Search : " << ip << endl;
+			cout << "Search : " << ip << ":" << port << endl;
     }
     
     return iplist;

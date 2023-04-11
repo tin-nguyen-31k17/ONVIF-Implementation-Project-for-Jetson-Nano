@@ -36,8 +36,6 @@ int main(int argc, char* argv[]) {
 	char *title;
 	int modo=0;
 
-
-	// ######### ANALISA PARAMETROS ##########
 	if (argc == 1) {
 		printf("Usage:\n\t./VideoOnvif IP (will just search the onvifs IPs)\n\t./VideoOnvif RTSP_URL (udp)\n\t./VideoOnvif WEBCAM (or device)\n\t./VideoOnvif configFile.txt\n\n" );
 		return -1;
@@ -78,13 +76,14 @@ int main(int argc, char* argv[]) {
 			if (cameras.empty()) {
 				if (url==NULL) {
 					printf("Looking for IP\n");
-					DiscoveryRTSP_IP disc("192.168.2.0");
+					DiscoveryRTSP_IP disc("192.168.2.230");
 					if (argc>2)
 						disc = DiscoveryRTSP_IP(argv[2]);
 						
 					std::list<char *> ips = disc.discovery();
 				
 					if (ips.empty()) {
+						url = ips.front();
 						std::cout << "Not possible to found the camera ip." << std::endl;
 						return -1;
 					}
@@ -92,6 +91,13 @@ int main(int argc, char* argv[]) {
 					printf("Just looking for the IPs. I don't know the url. Exiting.\n");
 
 					// TODO discovery the rtsp url.
+					if (modo == M_VIDEO_IPCAM && url!=NULL && strncmp(url, "rtsp://", 7)==0) {
+						printf("modo M_VIDEO_IPCAM rtsp\n");
+						char* url2 = new char[100];
+						memcpy(url2, url, strlen(url)+1);
+						urls.push_back(url2);
+					}
+
 
 					return 0;
 				}

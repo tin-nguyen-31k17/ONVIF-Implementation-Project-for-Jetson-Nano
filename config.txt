@@ -4,7 +4,7 @@
 #      save string if is to save the video, nothing if just to view.
 #
 #cam01
-rtsp://@192.168.15.2:554/onvif1 udp save
+rtsp://@192.168.2.241:554/user=admin_password=tlJwpbo6_channel=1_stream=0&amp;onvif=0.sdp?real_st udp save
 
 #cam02
 rtsp://@192.168.15.3:554/onvif1 udp save

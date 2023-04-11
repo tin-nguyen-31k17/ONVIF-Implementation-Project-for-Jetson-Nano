@@ -18,7 +18,7 @@ class DiscoveryRTSP_IP {
 		void initSocket();
 	
 		int port;
-		char ip[20];
+		char ip[24];
 		struct sockaddr_in server;
 		int socket_desc;
 		char * initialIP;
